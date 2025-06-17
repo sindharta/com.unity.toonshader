@@ -1,0 +1,17 @@
+{
+    "name": "Unity.ToonShader.GraphicsTest.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c081bc530f560634bb5c21d4b323a7f1",
+        "GUID:904fa68f17c579d429af85ad9901cc6a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
