@@ -96,8 +96,9 @@
 | Substitute for directional light 	                                                                                                                                                                        | N.A.	               | N.A.	   | OK	| To get around the limitation that multiple directional lights can't cast shadows at the same time. |
 | ***17. Rendering Paths*** 	                                                                                                                                                                               | 	                   | 	       |  	|  	|
 | Forward 	                                                                                                                                                                                                 | OK	                 | OK	     | OK	| |
-| Deferred 	                                                                                                                                                                                                | NO	             | NO	     | OK	| |
-| Deferred+ 	                                                                                                                                                               | N.A.	               | N/A	 | NO	| |
+| Deferred 	                                                                                                                                                                                                | NO	                 | NO	     | OK	| |
+| Deferred+ 	                                                                                                                                                               | N/A	             | N/A	 | NO	| |
+
 
 
 
