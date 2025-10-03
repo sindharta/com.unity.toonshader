@@ -1,4 +1,4 @@
-﻿//Unity Toon Shader
+//Unity Toon Shader
 //nobuyuki@unity3d.com
 //toshiyuki@unity3d.com (Intengrated) 
 
@@ -1350,29 +1350,108 @@ Shader "Toon" {
 
             // -------------------------------------
             // Render State Commands
-            Blend[_SrcBlend][_DstBlend]
-            ZWrite[_ZWrite]
-            Cull[_Cull]
+            ZWrite[_ZWriteMode]
+            Cull[_CullMode]
+            Blend SrcAlpha OneMinusSrcAlpha
+            Stencil {
+                Ref[_StencilNo]
+                Comp[_StencilComp]
+                Pass[_StencilOpPass]
+                Fail[_StencilOpFail]
+            }
 
             HLSLPROGRAM
             #pragma target 2.0
+            #pragma prefer_hlslcc gles
+            #pragma exclude_renderers d3d11_9x
 
             // -------------------------------------
             // Shader Stages
-            #pragma vertex vert
-            #pragma fragment frag
+            #pragma vertex Toon2DLitVert
+            #pragma fragment Toon2DLitFrag
 
             // -------------------------------------
             // Material Keywords
             #pragma shader_feature_local_fragment _ALPHATEST_ON
             #pragma shader_feature_local_fragment _ALPHAPREMULTIPLY_ON
+            #pragma shader_feature_local _NORMALMAP
+            #pragma shader_feature_local _USE_SHADE_TEXTURES
+            
+            // Toon shader features
+            #pragma shader_feature _EMISSIVE_SIMPLE _EMISSIVE_ANIMATION
 
+            // -------------------------------------
+            // Universal Pipeline keywords
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
+            #pragma multi_compile_fragment _ _SHADOWS_SOFT _SHADOWS_SOFT_LOW _SHADOWS_SOFT_MEDIUM _SHADOWS_SOFT_HIGH
+            #pragma multi_compile _ _FORWARD_PLUS
+
+            // -------------------------------------
+            // Unity defined keywords
+            #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
+            #pragma multi_compile _ SHADOWS_SHADOWMASK
+            #pragma multi_compile _ DIRLIGHTMAP_COMBINED
+            #pragma multi_compile _ LIGHTMAP_ON
+            #pragma multi_compile_fog
+
+            //--------------------------------------
+            // GPU Instancing
+            #pragma multi_compile_instancing
+            #pragma instancing_options renderinglayer
+        #if UNITY_VERSION >= 202230
             #include_with_pragmas "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DOTS.hlsl"
+        #else
+            #pragma multi_compile _ DOTS_INSTANCING_ON
+        #endif
 
             // -------------------------------------
             // Includes
-            #include "Packages/com.unity.render-pipelines.universal/Shaders/LitInput.hlsl"
-            #include "../../UniversalRP/Shaders/UniversalBasic2D.hlsl"
+            #include "../../UniversalRP/Shaders/UniversalToon2DLit.hlsl"
+            ENDHLSL
+        }
+
+        Pass
+        {
+            Name "Universal2DOutline"
+            Tags
+            {
+                "LightMode" = "SRPDefaultUnlit"
+            }
+
+            Cull[_SRPDefaultUnlitColMode]
+            ColorMask[_SPRDefaultUnlitColorMask]
+            Blend SrcAlpha OneMinusSrcAlpha
+            Stencil
+            {
+                Ref[_StencilNo]
+                Comp[_StencilComp]
+                Pass[_StencilOpPass]
+                Fail[_StencilOpFail]
+            }
+
+            HLSLPROGRAM
+            #pragma target 2.0
+            #pragma vertex Toon2DOutlineVert
+            #pragma fragment Toon2DOutlineFrag
+
+            // Outline keywords
+            #pragma multi_compile _IS_OUTLINE_CLIPPING_NO _IS_OUTLINE_CLIPPING_YES
+            #pragma multi_compile _OUTLINE_NML _OUTLINE_POS
+            #pragma shader_feature _USE_OUTLINE_TEX
+            #pragma shader_feature _IS_OUTLINETEX
+
+            //--------------------------------------
+            // GPU Instancing
+            #pragma multi_compile_instancing
+        #if UNITY_VERSION >= 202230
+            #include_with_pragmas "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DOTS.hlsl"
+        #else
+            #pragma multi_compile _ DOTS_INSTANCING_ON
+        #endif
+
+            #include "../../UniversalRP/Shaders/UniversalToon2DOutline.hlsl"
             ENDHLSL
         }
 

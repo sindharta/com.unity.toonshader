@@ -1,4 +1,4 @@
-﻿# Latest official docs
+# Latest official docs
 - [English](https://docs.unity3d.com/Packages/com.unity.toonshader@latest)
 - [日本語](https://docs.unity3d.com/ja/Packages/com.unity.toonshader@latest)
 
@@ -7,6 +7,7 @@
 * [Unity Toon Shader](com.unity.toonshader/Documentation~/index.md)
 * [Requirements](com.unity.toonshader/Documentation~/System-Requirements.md)
 * [Installation](com.unity.toonshader/Documentation~/installation.md)
+* **NEW: [2D Renderer Support](com.unity.toonshader/Documentation~/2D-Renderer-Support.md)** - Full toon shading for URP 2D projects
 * [What's new](com.unity.toonshader/Documentation~/whats-new.md)
   * [0.10.x-preview](com.unity.toonshader/Documentation~/whats-new-0.10.x.md)
   * [0.9.x-preview](com.unity.toonshader/Documentation~/whats-new-0.9.x.md)

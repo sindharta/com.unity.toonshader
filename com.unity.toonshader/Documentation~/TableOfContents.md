@@ -1,6 +1,8 @@
 * [Unity Toon Shader](index.md)
 * [Requirements](System-Requirements.md)
 * [Installation](installation.md)
+* [2D Renderer Support](2D-Renderer-Support.md)
+  * [2D Quick Start Guide](2D-Quick-Start.md)
 * [What's new](whats-new.md)
   * [0.10.x-preview](whats-new-0.10.x.md)
   * [0.9.x-preview](whats-new-0.9.x.md)

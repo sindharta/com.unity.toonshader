@@ -1,5 +1,26 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+* feat: comprehensive 2D Renderer support for URP projects
+  - Full toon shading with 2D lights (Global, Freeform, Sprite, Point, Directional)
+  - Multi-step toon shading (base, 1st shade, 2nd shade) with customizable steps and feathering
+  - Rim light support with standard and antipodean modes
+  - High color/specular highlights with toon-style rendering
+  - 2D-optimized outline rendering with normal-based and position-based methods
+  - Emissive effects with simple and animated modes
+  - Normal mapping support for 2D sprites
+  - Multiple 2D lights support with proper toon shading
+  - Shadow receiving from 2D lights
+  - GPU instancing and performance optimizations
+  - New shader files: UniversalToon2DInput.hlsl, UniversalToon2DLit.hlsl, UniversalToon2DOutline.hlsl
+* doc: comprehensive 2D Renderer support documentation (2D-Renderer-Support.md)
+
+### Changed
+* Enhanced Universal2D pass in main shader with full toon shading features
+* Replaced basic 2D fallback shader with comprehensive 2D implementation
+
 ## [0.12.0-preview] - 2025-07-28
 
 ### Added
