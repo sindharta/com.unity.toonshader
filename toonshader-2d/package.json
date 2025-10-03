@@ -1,0 +1,31 @@
+{
+    "name": "com.unity.toonshader.2d",
+    "displayName": "Unity Toon Shader 2D",
+    "version": "1.0.0",
+    "unity": "2021.3",
+    "description": "Unity Toon Shader 2D is a specialized version of the Unity Toon Shader designed specifically for the Universal Render Pipeline (URP) 2D Renderer. This package provides toon shading capabilities optimized for 2D sprites and graphics, including multi-step toon shading, rim lighting, highlights, and animated emission effects.\n\nKey Features:\n- Multi-step toon shading with customizable steps and feathering\n- Rim lighting effects for 2D sprites\n- Highlight and specular-like effects\n- Animated emission with scrolling and pulsing\n- Optimized for 2D renderer performance\n- Compatible with sprite atlases and UI elements\n- Support for 2D lighting system\n\nThis package is derived from the original Unity Toon Shader and adapted specifically for 2D rendering workflows.",
+    "dependencies": {
+        "com.unity.render-pipelines.universal": "10.0.0"
+    },
+    "keywords": [
+        "toon",
+        "shader",
+        "2d",
+        "urp",
+        "sprite",
+        "cel-shading",
+        "cartoon",
+        "anime"
+    ],
+    "author": {
+        "name": "Unity Technologies",
+        "email": "nobuyuki@unity3d.com"
+    },
+    "samples": [
+        {
+            "displayName": "2D Toon Shader Samples",
+            "description": "Sample scenes and materials demonstrating 2D toon shader usage.",
+            "path": "Samples~/2D_Samples"
+        }
+    ]
+}
