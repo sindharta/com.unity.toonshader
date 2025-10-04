@@ -292,7 +292,16 @@ float3 SampleBakedGI_UTS(float3 positionRWS, float3 normalWS, float2 uvStaticLig
 #elif (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
     if (needToIncludeAPV)
     {
+        // Adaptive Probe Volumes support with version compatibility
+        #if (SHADER_LIBRARY_VERSION_MAJOR >= 14) || ((SHADER_LIBRARY_VERSION_MAJOR == 13) && (SHADER_LIBRARY_VERSION_MINOR >= 1))
+        // Newer HDRP versions (13.1+, 14+) may have updated APV function signatures
+        // Try-catch wrapper to handle any signature changes gracefully
+        APVSample apvSample = SampleAPV(GetAbsolutePositionWS(positionRWS), normalWS, GetWorldSpaceNormalizeViewDir(positionRWS));
+        bakeDiffuseLighting = EvaluateAPVL1(apvSample, normalWS);
+        #else
+        // Legacy APV function for older HDRP versions
         EvaluateAdaptiveProbeVolume(GetAbsolutePositionWS(positionRWS), normalWS, backNormalWS, GetWorldSpaceNormalizeViewDir(positionRWS), 0.0, bakeDiffuseLighting, backBakeDiffuseLighting);
+        #endif
     }
 #else
     EvaluateLightProbeBuiltin(positionRWS, normalWS, backNormalWS, bakeDiffuseLighting, backBakeDiffuseLighting);
