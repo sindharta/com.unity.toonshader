@@ -1,19 +1,38 @@
-# Getting started with Unity Toon Shader
+# Getting Started with Unity Toon Shader
 
-The **Unity Toon Shader**(UTS) provides tons of properties for professional cel-shading, though. In this page, you'll learn what are keys for basic cel-shading step by step. 
+Welcome to the **Unity Toon Shader** (UTS)! This guide will walk you through the essential steps to create beautiful cel-shaded characters and objects in Unity.
 
-What you have to do for simple cel-shading are:
-* [Make sure at least one directional light is in the scene](#put-a-directional-light-in-the-scene).
-* [Create materials for cel-shading and set appropriate shader path](#creating-a-new-material-and-applying-unity-toon-shader).
-* [Set up three basic colors](#setting-up-three-basic-colors).
-* [Determine touch of the character](#adjusting-edge-of-three-basic-color-region).
-* [Set Outline](#set-outline).
+## Prerequisites
 
-After mastering above you might want to check:
-* [Advanced techniques](#advanced-techniques).
-  * [Eliminate outlines around eyes](#eliminating-outlines-around-eyes).
-  * [Add luster to hair](#adding-luster-to-hair).
-* [Options for stunning professional cel-shading](#more-options-for-stunning-professional-cel-shading).
+Before starting, make sure you have:
+- Unity 2021.3.19 or later
+- Unity Toon Shader package installed ([Installation Guide](installation.md))
+- A 3D model with proper UV mapping
+- Basic knowledge of Unity's Material system
+
+## Quick Setup Checklist
+
+For basic cel-shading, follow these essential steps:
+
+1. ✅ [Set up scene lighting](#put-a-directional-light-in-the-scene)
+2. ✅ [Create and configure materials](#creating-a-new-material-and-applying-unity-toon-shader)
+3. ✅ [Set up the three basic colors](#setting-up-three-basic-colors)
+4. ✅ [Adjust shading boundaries](#adjusting-edge-of-three-basic-color-region)
+5. ✅ [Configure outlines](#set-outline)
+
+## Next Steps
+
+Once you've mastered the basics, explore these advanced techniques:
+
+### Advanced Techniques
+- [Eliminate outlines around eyes](#eliminating-outlines-around-eyes)
+- [Add luster to hair](#adding-luster-to-hair)
+
+### Professional Features
+- [Emission effects](Emission.md)
+- [Normal mapping](NormalMap.md)
+- [Rim lighting](Rimlight.md)
+- [Material Capture (MatCap)](MatCap.md)
 
 
 ## Put a directional light in the scene

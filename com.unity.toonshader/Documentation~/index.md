@@ -1,12 +1,41 @@
-# Unity Toon Shader overview
+# Unity Toon Shader
 
 ![An image from the toon-shaded film The Phantom Knowledge in the Scene view of the Unity Editor. A close-up of a girl raising a weapon with a ruined cityscape in the background.](images/TPK_04.png)
 
-The **Unity Toon Shader** (UTS3) is a set of toon shaders designed to meet the needs of creators working on cel-shaded 3D-CG animations. 
+The **Unity Toon Shader** (UTS3) is a comprehensive set of toon shaders designed to meet the needs of creators working on cel-shaded 3D-CG animations, games, and visual effects. 
 
-The **Unity Toon Shader** is compatible with all the render pipelines, the **Built-in Render Pipeline**, the **Universal Render Pipeline (URP)** and the **High Definition Render Pipeline (HDRP)**, though, there are some differences in the features supported by different render pipelines. Please refer to see the difference for each render pipeline for details in [Feature Difference](FeatureModel_en.md).
+## Quick Start
 
-**Unity Toon Shader** is  the successor of **Unity-chan Toon Shader ver 2.0 (UTS2)**, which was popular for years in games and animations. But, UTS2 was solely for the **Built-in Render Pipeline**, consisted with tons of different shaders, unable to install through the [Package Manager window](https://docs.unity3d.com/Manual/upm-ui.html), and its license was different from other software Unity provides. 
+- **New to Unity Toon Shader?** → [Getting Started Guide](GettingStarted.md)
+- **Installing the package?** → [Installation Guide](installation.md)
+- **Looking for samples?** → [Sample Installation](sample-instlation.md)
+- **Need help with specific features?** → [Parameter Settings](Parameter-Settings.md)
+- **Having issues?** → [Known Issues & Troubleshooting](Known-issue.md)
+- **Common questions?** → [FAQ](FAQ.md)
+- **Want to learn best practices?** → [Best Practices Guide](BestPractices.md)
+
+## Key Features
+
+The **Unity Toon Shader** provides professional-grade cel-shading capabilities with:
+
+- **Multi-Pipeline Support**: Compatible with Built-in Render Pipeline, Universal Render Pipeline (URP), and High Definition Render Pipeline (HDRP)
+- **Real-time Control**: All features adjustable in real-time within Unity Editor
+- **Professional Color Design**: Independent control of light and shadow colors regardless of scene lighting
+- **Advanced Effects**: Highlight, Rim Light, Emission, Angel Ring, Material Capture (MatCap), and more
+- **Flexible Outline System**: Multiple outline generation methods with detailed control
+
+## Render Pipeline Compatibility
+
+The **Unity Toon Shader** is compatible with all Unity render pipelines, though there are some differences in the features supported by different render pipelines. Please refer to [Feature Differences](FeatureModel_en.md) for detailed compatibility information.
+
+## About Unity Toon Shader
+
+**Unity Toon Shader** is the successor of **Unity-chan Toon Shader ver 2.0 (UTS2)**, which was popular for years in games and animations. Unlike UTS2, which was solely for the Built-in Render Pipeline and consisted of many different shaders, UTS3:
+
+- Supports all Unity render pipelines
+- Can be installed through the [Package Manager window](https://docs.unity3d.com/Manual/upm-ui.html)
+- Uses Unity's standard licensing
+- Provides a unified, streamlined shader system 
 
 ## Feature of Unity Toon Shader
 
