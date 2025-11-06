@@ -1,6 +1,4 @@
 //Unity Toon Shader
-//nobuyuki@unity3d.com
-//toshiyuki@unity3d.com (Intengrated) 
 
 Shader "Toon(Tessellation)" {
     Properties {
@@ -41,14 +39,6 @@ Shader "Toon(Tessellation)" {
         _Clipping_Level("Clipping_Level", Range(0, 1)) = 0
         _Tweak_transparency("Tweak_transparency", Range(-1, 1)) = 0
         // ClippingMask paramaters to Here.
-
-
-        [Enum(OFF,0,FRONT,1,BACK,2)] _CullMode("Cull Mode", int) = 2  //OFF/FRONT/BACK
-
-
-
-
-
 
         _MainTex ("BaseMap", 2D) = "white" {}
         _BaseMap ("BaseMap", 2D) = "white" {}
@@ -364,7 +354,10 @@ Shader "Toon(Tessellation)" {
         [HideInInspector] _AlphaSrcBlend("__alphaSrc", Float) = 1.0
         [HideInInspector] _AlphaDstBlend("__alphaDst", Float) = 0.0
         [HideInInspector][ToggleUI] _ZWrite("__zw", Float) = 1.0
-        [HideInInspector] _CullMode("__cullmode", Float) = 2.0
+        [HideInInspector][ToggleUI] _TransparentZWrite("_TransparentZWrite", Float) = 0.0
+        [HideInInspector] _CullModeForward("__cullmodeForward", Float) = 2.0 // This mode is dedicated to Forward to correctly handle backface then front face rendering thin transparent
+        [HideInInspector] _TransparentCullMode("_TransparentCullMode", Int) = 2 // Back culling by default
+        [HideInInspector] _ZTestDepthEqualForOpaque("_ZTestDepthEqualForOpaque", Int) = 4 // Less equal
         [HideInInspector] _ZTestModeDistortion("_ZTestModeDistortion", Int) = 8
         [HideInInspector] _ZTestGBuffer("_ZTestGBuffer", Int) = 4
         [Enum(UnityEngine.Rendering.CompareFunction)] _ZTestTransparent("Transparent ZTest", Int) = 4 // Less equal
@@ -376,6 +369,12 @@ Shader "Toon(Tessellation)" {
         _TexWorldScale("Scale to apply on world coordinate", Float) = 1.0
         [HideInInspector] _InvTilingScale("Inverse tiling scale = 2 / (abs(_BaseColorMap_ST.x) + abs(_BaseColorMap_ST.y))", Float) = 1
         [HideInInspector] _UVMappingMask("_UVMappingMask", Color) = (1, 0, 0, 0)
+        [Enum(TangentSpace, 0, ObjectSpace, 1)] _NormalMapSpace("NormalMap space", Float) = 0
+
+        // Following enum should be material feature flags (i.e bitfield), however due to Gbuffer encoding constrain many combination exclude each other
+        // so we use this enum as "material ID" which can be interpreted as preset of bitfield of material feature
+        // The only material feature flag that can be added in all cases is clear coat
+        [Enum(Subsurface Scattering, 0, Standard, 1, Anisotropy, 2, Iridescence, 3, Specular Color, 4, Translucent, 5)] _MaterialID("MaterialId", Int) = 1 // MaterialId.Standard
 
         [ToggleUI] _EnableGeometricSpecularAA("EnableGeometricSpecularAA", Float) = 0.0
         _SpecularAAScreenSpaceVariance("SpecularAAScreenSpaceVariance", Range(0.0, 1.0)) = 0.1
@@ -410,7 +409,6 @@ Shader "Toon(Tessellation)" {
         // TODO: Handle culling mode for backface culling
         // HACK: GI Baking system relies on some properties existing in the shader ("_MainTex", "_Cutoff" and "_Color") for opacity handling, so we need to store our version of those parameters in the hard-coded name the GI baking system recognizes.
         //////////// _MainTex("BaseMap", 2D) = "white" {}
-        _Color("Color", Color) = (1,1,1,1)
         _Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 	//////////////////////////////////////////////////////////////////////////////
 	//////////////////// End of HDRP material default values. ////////////////////
