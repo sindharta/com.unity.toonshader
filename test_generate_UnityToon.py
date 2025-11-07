@@ -12,7 +12,7 @@ from generate_UnityToon import (
 def test_shader_generation():
     try:
         # Test reading the common properties shader
-        common_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.block"
+        common_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.shaderblock"
         with open(common_properties_path, 'r') as f:
             common_properties_shader = f.read()
 
@@ -28,7 +28,7 @@ def test_shader_generation():
         print(f"Successfully extracted common properties. Length: {len(common_properties)} characters")
 
         # Test reading the tessellation properties shader
-        tessellation_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.block"
+        tessellation_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.shaderblock"
         with open(tessellation_properties_path, 'r') as f:
             tessellation_properties_shader = f.read()
 
