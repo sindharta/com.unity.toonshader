@@ -64,9 +64,9 @@ Convenience launchers are provided as `generate_UnityToon.sh` and `generate_Unit
 ```
 com.unity.toon-graphics-test/
 └── Editor/
-    ├── ShaderGenerator.cs          # Unity Editor script
-    ├── ShaderGeneratorTest.cs      # Editor test harness
-    └── README_ShaderGenerator.md   # This file
+    ├── UnityToonShaderGenerator.cs          # Unity Editor script
+    ├── UnityToonShaderGeneratorTest.cs      # Editor test harness
+    └── README_UnityToonShaderGenerator.md   # This file
 
 com.unity.toonshader/Runtime/Shaders/Common/Parts/
 ├── CommonProperties.shaderblock          # Shared properties (plain text)
