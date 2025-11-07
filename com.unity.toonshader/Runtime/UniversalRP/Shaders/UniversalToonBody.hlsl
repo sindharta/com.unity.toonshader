@@ -1,4 +1,4 @@
-﻿//Unity Toon Shader/Universal
+//Unity Toon Shader/Universal
 //nobuyuki@unity3d.com
 //toshiyuki@unity3d.com (Universal RP/HDRP) 
 
@@ -51,7 +51,7 @@
     #define UTS_LIGHT_LOOP_END }
 #endif
 
-             
+#include "../../Common/UTSCommonMath.hlsl"
 
 
 // RaytracedHardShadow
@@ -62,21 +62,6 @@
 #define TEXTURE2D_SAMPLER2D(textureName, samplerName) Texture2D textureName; SamplerState samplerName
             TEXTURE2D_SAMPLER2D(_RaytracedHardShadow, sampler_RaytracedHardShadow);
             float4 _RaytracedHardShadow_TexelSize;
-
-            //function to rotate the UV: RotateUV()
-            //float2 rotatedUV = RotateUV(i.uv0, (_angular_Verocity*3.141592654), float2(0.5, 0.5), _Time.g);
-            float2 RotateUV(float2 _uv, float _radian, float2 _piv, float _time)
-            {
-                float RotateUV_ang = _radian;
-                float RotateUV_cos = cos(_time*RotateUV_ang);
-                float RotateUV_sin = sin(_time*RotateUV_ang);
-                return (mul(_uv - _piv, float2x2( RotateUV_cos, -RotateUV_sin, RotateUV_sin, RotateUV_cos)) + _piv);
-            }
-            //
-            fixed3 DecodeLightProbe( fixed3 N ){
-                return ShadeSH9(float4(N,1));
-            }
-
 
             inline void InitializeStandardLitSurfaceDataUTS(float2 uv, out SurfaceData outSurfaceData)
             {

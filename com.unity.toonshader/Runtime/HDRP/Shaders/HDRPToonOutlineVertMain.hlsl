@@ -1,23 +1,28 @@
-﻿//Unity Toon Shader/HDRP
+//Unity Toon Shader/HDRP
 //nobuyuki@unity3d.com
 //toshiyuki@unity3d.com (Universal RP/HDRP) 
 
+
+#define UTS_OUTLINE_OBJECT_TO_WORLD unity_ObjectToWorld
+#define UTS_OUTLINE_Z_OVERDRAW_SCALE (1.0f - _ZOverDrawMode)
+#include "../../Common/UTSOutlineCore.hlsl"
+#undef UTS_OUTLINE_OBJECT_TO_WORLD
+#undef UTS_OUTLINE_Z_OVERDRAW_SCALE
 
 #if 1
         float4 objPos = mul(unity_ObjectToWorld, float4(0, 0, 0, 1));
         float2 Set_UV0 = inputMesh.uv0;
         float4 _Outline_Sampler_var = tex2Dlod(_Outline_Sampler, float4(TRANSFORM_TEX(Set_UV0, _Outline_Sampler), 0.0, 0));
         //v.2.0.4.3 baked Normal Texture for Outline
-        float3 normalDir = UnityObjectToWorldNormal(inputMesh.normalOS);
-        float3 tangentDir = normalize(mul(unity_ObjectToWorld, float4(inputMesh.tangentOS.xyz, 0.0)).xyz);
-        float3 bitangentDir = normalize(cross(normalDir, tangentDir) * inputMesh.tangentOS.w);
-        float3x3 tangentTransform = float3x3(tangentDir, bitangentDir, normalDir);
+        float3 normalDir;
+        float3 tangentDir;
+        float3 bitangentDir;
+        float3x3 tangentTransform = UTSOutlineBuildTangentFrame(inputMesh.normalOS, inputMesh.tangentOS, normalDir, tangentDir, bitangentDir);
         //UnpackNormal() can't be used, and so as follows. Do not specify a bump for the texture to be used.
         float4 _BakedNormal_var = (tex2Dlod(_BakedNormal, float4(TRANSFORM_TEX(Set_UV0, _BakedNormal), 0.0, 0)) * 2 - 1);
-        float3 _BakedNormalDir = normalize(mul(_BakedNormal_var.rgb, tangentTransform));
+        float3 _BakedNormalDir = UTSOutlineApplyBakedNormal(tangentTransform, _BakedNormal_var.rgb);
         //end
-        float Set_Outline_Width = (_Outline_Width*0.001*smoothstep(_Farthest_Distance, _Nearest_Distance, distance(objPos.rgb, _WorldSpaceCameraPos))*_Outline_Sampler_var.rgb).r;
-        Set_Outline_Width *= (1.0f - _ZOverDrawMode);
+        float Set_Outline_Width = UTSOutlineComputeWidth((_Outline_Sampler_var.rgb).r, objPos.rgb);
         //v.2.0.7.5
         float4 _ClipCameraPos = mul(UNITY_MATRIX_VP, float4(_WorldSpaceCameraPos.xyz, 1));
         //v.2.0.7
