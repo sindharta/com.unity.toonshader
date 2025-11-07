@@ -1,4 +1,4 @@
-//Auto-generated on Fri Nov 07 05:12:29 UTC 2025
+//Auto-generated on Fri Nov 07 05:27:25 UTC 2025
 Shader "Toon(Tessellation)" {
     Properties
     {
@@ -453,11 +453,6 @@ Shader "Toon(Tessellation)" {
         // so we use this enum as "material ID" which can be interpreted as preset of bitfield of material feature
         // The only material feature flag that can be added in all cases is clear coat
         [Enum(Subsurface Scattering, 0, Standard, 1, Anisotropy, 2, Iridescence, 3, Specular Color, 4, Translucent, 5)] _MaterialID("MaterialId", Int) = 1 // MaterialId.Standard
-        [ToggleUI] _TransmissionEnable("_TransmissionEnable", Float) = 1.0
-
-        [ToggleUI] _DisplacementLockObjectScale("displacement lock object scale", Float) = 1.0
-        [ToggleUI] _DisplacementLockTilingScale("displacement lock tiling scale", Float) = 1.0
-        [ToggleUI] _DepthOffsetEnable("Depth Offset View space", Float) = 0.0
 
         [ToggleUI] _EnableGeometricSpecularAA("EnableGeometricSpecularAA", Float) = 0.0
         _SpecularAAScreenSpaceVariance("SpecularAAScreenSpaceVariance", Range(0.0, 1.0)) = 0.1
@@ -508,9 +503,6 @@ Shader "Toon(Tessellation)" {
         _TessellationFactorTriangleSize("Tessellation triangle size", Float) = 100.0
         _TessellationShapeFactor("Tessellation shape factor", Range(0.0, 1.0)) = 0.75 // Only use with Phong
         _TessellationBackFaceCullEpsilon("Tessellation back face epsilon", Range(-1.0, 0.0)) = -0.25
-
-        // HDRP material tessellation values
-        [Enum(None, 0, Tessellation displacement, 3)] _DisplacementMode("DisplacementMode", Int) = 3
 
         // Legacy material tessellation values
         //Tessellation
