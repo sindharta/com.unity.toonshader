@@ -4,8 +4,8 @@ This tool helps maintain consistency between `UnityToon.shader` and `UnityToonTe
 
 ## Files
 
-- **CommonPropertiesPart.shader**: Plain text list of shared property definitions (no Shader wrapper) with original comments preserved (`Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/`)
-- **TessellationPropertiesPart.shader**: Plain text list of tessellation-only property definitions (no Shader wrapper) (`Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/`)
+- **CommonProperties.block**: Plain text list of shared property definitions (no Shader wrapper) with original comments preserved (`Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/`)
+- **TessellationProperties.block**: Plain text list of tessellation-only property definitions (no Shader wrapper) (`Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/`)
 - **ShaderGenerator.cs**: Unity Editor script (now located in the graphics test package) that generates the shader files from the property assets
 
 ## How to Use
@@ -69,8 +69,8 @@ com.unity.toon-graphics-test/
     └── README_ShaderGenerator.md   # This file
 
 com.unity.toonshader/Runtime/Shaders/Common/Parts/
-├── CommonPropertiesPart.shader     # Shared properties (plain text)
-└── TessellationPropertiesPart.shader # Tessellation-specific properties (plain text)
+├── CommonProperties.block          # Shared properties (plain text)
+└── TessellationProperties.block    # Tessellation-specific properties (plain text)
 
 com.unity.toonshader/Runtime/Integrated/Shaders/
 ├── UnityToon.shader                # Generated shader (regular)

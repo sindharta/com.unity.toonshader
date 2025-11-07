@@ -169,13 +169,13 @@ def load_properties_from_shader(shader_path, descriptor):
 def generate_shader_files():
     try:
         # Read the common properties shader
-        common_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonPropertiesPart.shader"
+        common_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.block"
         common_properties = load_properties_from_shader(common_properties_path, "common")
         if not common_properties:
             return False
 
         # Read the tessellation properties shader
-        tessellation_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationPropertiesPart.shader"
+        tessellation_properties_path = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.block"
         tessellation_properties = load_properties_from_shader(tessellation_properties_path, "tessellation")
         if tessellation_properties is None:
             return False
@@ -187,7 +187,7 @@ def generate_shader_files():
         print("\nGenerating UnityToon.shader...")
         success1 = generate_shader(
             "com.unity.toonshader/Runtime/Integrated/Shaders/UnityToon.shader",
-            "com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToon_template.shader",
+            "com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToon.template",
             common_properties,
             "",
             auto_comment_line,
@@ -197,7 +197,7 @@ def generate_shader_files():
         print("\nGenerating UnityToonTessellation.shader...")
         success2 = generate_shader(
             "com.unity.toonshader/Runtime/Integrated/Shaders/UnityToonTessellation.shader",
-            "com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToonTessellation_template.shader",
+            "com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToonTessellation.template",
             common_properties,
             tessellation_properties,
             auto_comment_line,

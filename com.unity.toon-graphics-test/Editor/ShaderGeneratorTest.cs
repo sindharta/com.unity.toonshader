@@ -18,7 +18,7 @@ namespace UnityEditor.Rendering.Toon
             try
             {
                 // Test reading the common properties file
-                string commonPropertiesPath = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonPropertiesPart.shader";
+                string commonPropertiesPath = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.block";
                 string commonPropertiesShader = File.ReadAllText(commonPropertiesPath);
                 
                 if (string.IsNullOrEmpty(commonPropertiesShader))
@@ -29,14 +29,14 @@ namespace UnityEditor.Rendering.Toon
                 string commonProperties = ExtractProperties(commonPropertiesShader);
                 if (string.IsNullOrEmpty(commonProperties))
                 {
-                    Debug.LogError("Failed to extract properties from CommonPropertiesPart.shader");
+                    Debug.LogError("Failed to extract properties from CommonProperties.block");
                     return;
                 }
                 
                 Debug.Log($"Successfully extracted common properties. Length: {commonProperties.Length} characters");
                 
                 // Test reading the tessellation properties file
-                string tessellationPropertiesPath = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationPropertiesPart.shader";
+                string tessellationPropertiesPath = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.block";
                 string tessellationPropertiesShader = File.ReadAllText(tessellationPropertiesPath);
                 
                 if (string.IsNullOrEmpty(tessellationPropertiesShader))
@@ -47,7 +47,7 @@ namespace UnityEditor.Rendering.Toon
                 string tessellationProperties = ExtractProperties(tessellationPropertiesShader);
                 if (string.IsNullOrEmpty(tessellationProperties))
                 {
-                    Debug.LogError("Failed to extract properties from TessellationPropertiesPart.shader");
+                    Debug.LogError("Failed to extract properties from TessellationProperties.block");
                     return;
                 }
                 

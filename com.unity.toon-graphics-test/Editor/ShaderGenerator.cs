@@ -17,12 +17,12 @@ namespace UnityEditor.Rendering.Toon
     public static class ShaderGenerator
     {
         private static readonly Regex PropertyNameRegex = new Regex(@"(?:\]\s*|^)([A-Za-z_][A-Za-z0-9_]*)\s*\(", RegexOptions.Compiled);
-        private const string COMMON_PROPERTIES_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonPropertiesPart.shader";
-        private const string TESSELATION_PROPERTIES_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationPropertiesPart.shader";
+        private const string COMMON_PROPERTIES_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.block";
+        private const string TESSELATION_PROPERTIES_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.block";
         private const string UNITY_TOON_SHADER_PATH = "Packages/com.unity.toonshader/Runtime/Integrated/Shaders/UnityToon.shader";
-        private const string UNITY_TOON_SHADER_TEMPLATE_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToon_template.shader";
+        private const string UNITY_TOON_SHADER_TEMPLATE_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToon.template";
         private const string UNITY_TOON_TESSELATION_SHADER_PATH = "Packages/com.unity.toonshader/Runtime/Integrated/Shaders/UnityToonTessellation.shader";
-        private const string UNITY_TOON_TESSELATION_SHADER_TEMPLATE_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToonTessellation_template.shader";
+        private const string UNITY_TOON_TESSELATION_SHADER_TEMPLATE_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/UnityToonTessellation.template";
         
         [MenuItem("Toon Shader/Generate Shader Files")]
         public static void GenerateShaderFilesMenu()

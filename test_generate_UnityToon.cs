@@ -10,7 +10,7 @@ class Program
         try
         {
             // Test reading the common properties shader
-            string commonPropertiesPath = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonPropertiesPart.shader";
+            string commonPropertiesPath = "com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.block";
             string commonPropertiesShader = File.ReadAllText(commonPropertiesPath);
 
             if (string.IsNullOrEmpty(commonPropertiesShader))
@@ -21,14 +21,14 @@ class Program
             string commonProperties = ExtractProperties(commonPropertiesShader);
             if (string.IsNullOrEmpty(commonProperties))
             {
-                Console.WriteLine("ERROR: Failed to extract properties from CommonPropertiesPart.shader");
+                Console.WriteLine("ERROR: Failed to extract properties from CommonProperties.block");
                 return;
             }
 
             Console.WriteLine($"Successfully extracted common properties. Length: {commonProperties.Length} characters");
 
             // Test reading the tessellation properties shader
-            string tessellationPropertiesPath = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationPropertiesPart.shader";
+            string tessellationPropertiesPath = "com.unity.toonshader/Runtime/Shaders/Common/Parts/TessellationProperties.block";
             string tessellationPropertiesShader = File.ReadAllText(tessellationPropertiesPath);
 
             if (string.IsNullOrEmpty(tessellationPropertiesShader))
@@ -39,7 +39,7 @@ class Program
             string tessellationProperties = ExtractProperties(tessellationPropertiesShader);
             if (string.IsNullOrEmpty(tessellationProperties))
             {
-                Console.WriteLine("ERROR: Failed to extract properties from TessellationPropertiesPart.shader");
+                Console.WriteLine("ERROR: Failed to extract properties from TessellationProperties.block");
                 return;
             }
 
