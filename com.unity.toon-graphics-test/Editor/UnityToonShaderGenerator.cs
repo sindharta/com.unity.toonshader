@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using UnityEditor;
 using UnityEngine;
 
 namespace UnityEditor.Rendering.Toon
@@ -14,7 +13,7 @@ namespace UnityEditor.Rendering.Toon
     /// This helps maintain consistency between UnityToon.shader and UnityToonTessellation.shader
     /// by using a single source of truth for shared properties.
     /// </summary>
-    public static class ShaderGenerator
+    public static class UnityToonShaderGenerator
     {
         private static readonly Regex PropertyNameRegex = new Regex(@"(?:\]\s*|^)([A-Za-z_][A-Za-z0-9_]*)\s*\(", RegexOptions.Compiled);
         private const string COMMON_PROPERTIES_PATH = "Packages/com.unity.toonshader/Runtime/Shaders/Common/Parts/CommonProperties.shaderblock";
