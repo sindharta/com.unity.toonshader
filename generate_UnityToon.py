@@ -267,6 +267,9 @@ def generate_shader(shader_path, template_path, common_properties, tessellation_
 
         # Write the new shader file
         new_content = new_content.lstrip('\ufeff')
+        new_content = new_content.replace('\r\n', '\n').replace('\r', '\n')
+        if not new_content.endswith('\n'):
+            new_content += '\n'
         os.makedirs(os.path.dirname(shader_path), exist_ok=True)
         with open(shader_path, 'w', encoding='utf-8') as f:
             f.write(new_content)
