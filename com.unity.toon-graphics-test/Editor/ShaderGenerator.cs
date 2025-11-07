@@ -318,7 +318,7 @@ namespace UnityEditor.Rendering.Toon
                     return;
                 }
 
-                var lines = rawText.Split(new[] { '\n', '\r' }, StringSplitOptions.None);
+                var lines = rawText.Split(new[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
                 foreach (var rawLine in lines)
                 {
                     var trimmed = rawLine.Trim();
