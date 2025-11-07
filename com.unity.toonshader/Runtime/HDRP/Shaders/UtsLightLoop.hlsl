@@ -5,6 +5,7 @@
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Macros.hlsl"
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/PhysicalCamera.hlsl"
 #include "HDRPToonHead.hlsl"
+#include "../../Common/UTSCommonMath.hlsl"
 
 // Channel mask enum.
 // this must be same to UI cs code
@@ -33,16 +34,6 @@ float _ToonEvAdjustmentValueMax;
 float _ToonEvAdjustmentCompensation;
 float _ToonIgnoreExposureMultiplier;
 
-
-// function to rotate the UV: RotateUV()
-//float2 rotatedUV = RotateUV(i.uv0, (_angular_Verocity*3.141592654), float2(0.5, 0.5), _Time.g);
-float2 RotateUV(float2 _uv, float _radian, float2 _piv, float _time)
-{
-    float RotateUV_ang = _radian;
-    float RotateUV_cos = cos(_time*RotateUV_ang);
-    float RotateUV_sin = sin(_time*RotateUV_ang);
-    return (mul(_uv - _piv, float2x2(RotateUV_cos, -RotateUV_sin, RotateUV_sin, RotateUV_cos)) + _piv);
-}
 
 float3 ConvertFromEV100(float3 EV100)
 {

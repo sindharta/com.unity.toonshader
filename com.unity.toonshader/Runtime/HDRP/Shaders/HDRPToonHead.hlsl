@@ -104,9 +104,7 @@ half3 ShadeSH9(half4 normal)
     return res;
 }
 
-float3 DecodeLightProbe(float3 N) {
-    return ShadeSH9(float4(N, 1));
-}
+#include "../../Common/UTSCommonMath.hlsl"
 
 
 inline float GammaToLinearSpaceExact(float value)

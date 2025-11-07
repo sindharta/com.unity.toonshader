@@ -1,4 +1,4 @@
-﻿//Unity Toon Shader/Legacy
+//Unity Toon Shader/Legacy
 //nobuyuki@unity3d.com
 //toshiyuki@unity3d.com (Intengrated) 
 // ※Tessellation support
@@ -35,20 +35,7 @@ struct VertexOutput {
 
 #include "UCTS_Light.cginc"
 #include "UCTS_Input.cginc"
-
-            //function to rotate the UV: RotateUV()
-            //float2 rotatedUV = RotateUV(i.uv0, (_angular_Verocity*3.141592654), float2(0.5, 0.5), _Time.g);
-            float2 RotateUV(float2 _uv, float _radian, float2 _piv, float _time)
-            {
-                float RotateUV_ang = _radian;
-                float RotateUV_cos = cos(_time*RotateUV_ang);
-                float RotateUV_sin = sin(_time*RotateUV_ang);
-                return (mul(_uv - _piv, float2x2( RotateUV_cos, -RotateUV_sin, RotateUV_sin, RotateUV_cos)) + _piv);
-            }
-            //
-            fixed3 DecodeLightProbe( fixed3 N ){
-                return ShadeSH9(float4(N,1));
-            }
+#include "../../Common/UTSCommonMath.hlsl"
             
 
             VertexOutput vert (VertexInput v) {
