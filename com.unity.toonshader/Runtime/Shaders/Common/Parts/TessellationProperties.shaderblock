@@ -10,9 +10,6 @@ _TessellationFactorTriangleSize("Tessellation triangle size", Float) = 100.0
 _TessellationShapeFactor("Tessellation shape factor", Range(0.0, 1.0)) = 0.75 // Only use with Phong
 _TessellationBackFaceCullEpsilon("Tessellation back face epsilon", Range(-1.0, 0.0)) = -0.25
 
-// HDRP material tessellation values
-[Enum(None, 0, Tessellation displacement, 3)] _DisplacementMode("DisplacementMode", Int) = 3
-
 // Legacy material tessellation values
 //Tessellation
 _TessEdgeLength("DX11 Tess : Edge length", Range(2, 50)) = 5
