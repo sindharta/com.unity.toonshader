@@ -30,13 +30,21 @@ Besides the three basic colors, the **Unity Toon Shader** provides a wide variet
 
 To get started with cel-shading, see [Getting Started](com.unity.toonshader/Documentation~/GettingStarted.md).
 
+## Render Pipeline Compatibility
+The **Unity Toon Shader** works across the **Built-in Render Pipeline**,
+**Universal Render Pipeline (URP)**, and **High Definition Render Pipeline (HDRP)**.
+
+Feature availability can vary slightly between pipelines,
+so review the [feature differences](com.unity.toonshader/Documentation~/FeatureModel_en.md) document to confirm
+which features are supported in your target pipeline.
+
+> The use of linear color space is strongly recommended.
+
 # Table of Contents
 
 * [Unity Toon Shader](com.unity.toonshader/Documentation~/index.md)
-* [Requirements](com.unity.toonshader/Documentation~/System-Requirements.md)
 * [Installation](com.unity.toonshader/Documentation~/installation.md)
 * [Getting started](com.unity.toonshader/Documentation~/GettingStarted.md)
-* [Material Converter](com.unity.toonshader/Documentation~/MaterialConverter.md)
 * [Inspector Window Settings](com.unity.toonshader/Documentation~/Parameter-Settings.md)
   * [Modes](com.unity.toonshader/Documentation~/Modes.md)
   * [Shader](com.unity.toonshader/Documentation~/Shader.md)
@@ -58,7 +66,8 @@ To get started with cel-shading, see [Getting Started](com.unity.toonshader/Docu
 * Additional features for HDRP
   * [Box Light](com.unity.toonshader/Documentation~/HDRPBoxLight.md)
   * [Toon EV Adjustment](com.unity.toonshader/Documentation~/ToonEVAdjustment.md)
-* [Samples](com.unity.toonshader/Documentation~/SampleInstallation.md)
+* [Material Converter](com.unity.toonshader/Documentation~/MaterialConverter.md)
+* [Samples](com.unity.toonshader/Documentation~/sample-instlation.md)
 * [Feature Difference](com.unity.toonshader/Documentation~/FeatureModel_en.md)
 * [Known Issues](com.unity.toonshader/Documentation~/Known-issue.md)
 
@@ -102,4 +111,4 @@ git config --global core.symlinks true
 
 
 
-*Auto-generated on Tue Dec  2 16:44:01 UTC 2025*
+*Auto-generated on Wed Dec  3 12:31:50 UTC 2025*
