@@ -67,7 +67,7 @@ which features are supported in your target pipeline.
   * [Box Light](com.unity.toonshader/Documentation~/HDRPBoxLight.md)
   * [Toon EV Adjustment](com.unity.toonshader/Documentation~/ToonEVAdjustment.md)
 * [Material Converter](com.unity.toonshader/Documentation~/MaterialConverter.md)
-* [Samples](com.unity.toonshader/Documentation~/sample-instlation.md)
+* [Samples](com.unity.toonshader/Documentation~/SampleInstallation.md)
 * [Feature Difference](com.unity.toonshader/Documentation~/FeatureModel_en.md)
 * [Known Issues](com.unity.toonshader/Documentation~/Known-issue.md)
 
