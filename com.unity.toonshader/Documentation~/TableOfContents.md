@@ -23,7 +23,7 @@
 * Additional features for HDRP
   * [Box Light](HDRPBoxLight.md)
   * [Toon EV Adjustment](ToonEVAdjustment.md)
-* [Samples](sample-instlation.md)
+* [Samples](SampleInstallation.md)
 * [Feature Difference](FeatureModel_en.md)
 * [Known Issues](Known-issue.md)
 

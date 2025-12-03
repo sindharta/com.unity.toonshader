@@ -58,7 +58,7 @@ To get started with cel-shading, see [Getting Started](com.unity.toonshader/Docu
 * Additional features for HDRP
   * [Box Light](com.unity.toonshader/Documentation~/HDRPBoxLight.md)
   * [Toon EV Adjustment](com.unity.toonshader/Documentation~/ToonEVAdjustment.md)
-* [Samples](com.unity.toonshader/Documentation~/sample-instlation.md)
+* [Samples](com.unity.toonshader/Documentation~/SampleInstallation.md)
 * [Feature Difference](com.unity.toonshader/Documentation~/FeatureModel_en.md)
 * [Known Issues](com.unity.toonshader/Documentation~/Known-issue.md)
 
