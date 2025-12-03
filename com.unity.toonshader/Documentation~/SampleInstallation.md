@@ -24,11 +24,6 @@ The **Unity Toon Shader** package includes sample scenes that demonstrate lighti
 
 `Assets/Samples/Unity Toon Shader/<version>/Universal Render Pipeline`
 
-- `Sample/Sample.unity` &mdash; Guided tour of the core toon material settings.
-- `ToonShader.unity` &mdash; Illustration-style shading showcase.
-- `ToonShader_CelLook.unity` &mdash; Classic cel-look configuration for characters.
-- `ToonShader_Emissive.unity` &mdash; Demonstrates [Emission](Emission.md) layering.
-- `ToonShader_Firefly.unity` &mdash; Multiple point lights without firefly artifacts.
 - `AngelRing/AngelRing.unity` &mdash; Setup for the [Angel Ring](AngelRing.md) projection.
 - `Baked Normal/Cube_HardEdge.unity` &mdash; Reference for baked-normal workflows.
 - `BoxProjection/BoxProjection.unity` &mdash; Dark-room lighting with box projection probes.
@@ -38,6 +33,11 @@ The **Unity Toon Shader** package includes sample scenes that demonstrate lighti
 - `Mirror/MirrorTest.unity` &mdash; Mirror material setup and testing.
 - `NormalMap/NormalMap.unity` &mdash; Normal-map techniques tuned for toon shading.
 - `PointLightTest/PointLightTest.unity` &mdash; Point- and spot-light cel shading examples.
+- `Sample/KageBall.unity` &mdash; Guided tour of the core toon material settings.
+- `UnityChan/UnityChan.unity` &mdash; Illustration-style shading showcase.
+- `UnityChan_CelLook/UnityChan_CelLook.unity` &mdash; Classic cel-look configuration for characters.
+- `UnityChan_Emissive/UnityChan_Emissive.unity` &mdash; Demonstrates [Emission](Emission.md) layering.
+- `UnityChan_Firefly/UnityChan_Firefly.unity` &mdash; Multiple point lights without firefly artifacts.
 
 ### Built-in Render Pipeline
 
