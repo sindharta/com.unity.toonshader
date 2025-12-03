@@ -7,6 +7,7 @@ on:
     paths:
       - 'AutoGenerateParts/Readme*.md'
       - 'com.unity.toonshader/Documentation~/index.md'
+      - 'com.unity.toonshader/Documentation~/TableOfContents.md'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
