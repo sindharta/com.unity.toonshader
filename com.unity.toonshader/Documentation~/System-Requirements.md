@@ -1,15 +1,10 @@
-# Requirements and compatibility
+# System Requirements and Compatibility
 
-## Requirements
+## Hardware and Software Requirements
+- **Engine version**: Follow the minimum Unity version required by your chosen render pipeline.
+- **Hardware**: Use the hardware specifications recommended for that render pipeline; the shader does not impose additional demands beyond those baselines.
+- **Color space**: Linear color space is strongly recommended for consistent lighting and shading results.
+- **Documentation**: For exact GPU, CPU, and platform requirements, consult the official documentation for the Built-in RP, URP, or HDRP.
 
-Because the **Unity Toon Shader** is compatible with all render pipelines,
-please refer to each render pipeline's requirements documentation to see specific hardware and software requirements.
-The use of linear color space is strongly recommended.
-
-
-## Unity Render Pipeline compatibility
-The **Unity Toon Shader** is compatible with all render pipelines:
-the **Built-in Render Pipeline**, **Universal Render Pipeline (URP)**,
-and **High Definition Render Pipeline (HDRP)**.
-However, there are some differences in the features supported by different render pipelines.
-Please refer to the [feature differences](FeatureModel_en.md) for each render pipeline for details.
+## Unity Render Pipeline Compatibility
+The **Unity Toon Shader** works across the **Built-in Render Pipeline**, **Universal Render Pipeline (URP)**, and **High Definition Render Pipeline (HDRP)**. Feature availability can vary slightly between pipelines, so review the [feature differences](FeatureModel_en.md) document to confirm which effects are supported in your target pipeline.
