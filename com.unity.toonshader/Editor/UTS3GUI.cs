@@ -57,13 +57,12 @@ namespace UnityEditor.Rendering.Toon {
         internal static string srpDefaultLightModeName {
             get {
                 const string legacyDefaultLightModeName = "Always";
-                const string srpDefaultLightModeName = "SRPDefaultUnlit";
 
                 if (currentRenderPipeline == RenderPipeline.Legacy) {
                     return legacyDefaultLightModeName; // default.
                 }
 
-                return srpDefaultLightModeName;
+                return ToonConstants.SHADER_LIGHT_MODE_NAME_FOR_OUTLINE;
             }
         }
 
@@ -187,8 +186,6 @@ namespace UnityEditor.Rendering.Toon {
 
         internal const string ShaderDefineIS_TRANSCLIPPING_OFF = "_IS_TRANSCLIPPING_OFF";
         internal const string ShaderDefineIS_TRANSCLIPPING_ON = "_IS_TRANSCLIPPING_ON";
-
-        internal const string ShaderDefineIS_CLIPPING_MATTE = "_IS_CLIPPING_MATTE";
 
 
         protected readonly string[] UtsModeNames = { "Standard", "With Additional Control Maps" };
